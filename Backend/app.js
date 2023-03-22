@@ -45,14 +45,16 @@ app.get('/keys/:key', async (req, res) => {
   
 
   app.post('/keys', async (req, res) => {
-    const { key, value } = req.body;
-  
-    // Überprüfen, ob der Wert ein Objekt ist, und in einen JSON-String konvertieren, falls erforderlich
-    const stringValue = (typeof value === 'object' && value !== null) ? JSON.stringify(value) : value;
-  
-    await redis.set(key, stringValue);
-  
-    res.status(201).json({ message: 'Key-value pair created' });
+    try {
+      const { key, question, options, correctAnswer } = req.body;
+      const questionData = JSON.stringify({ question, options, correctAnswer });
+      
+      await redis.set(key, questionData);
+      res.json({ message: 'Frage hinzugefügt', key });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Ein Fehler ist aufgetreten' });
+    }
   });
   
   async function seedDatabase() {
