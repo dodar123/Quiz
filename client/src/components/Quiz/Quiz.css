@@ -1,0 +1,15 @@
+.Quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .Quiz h2 {
+    margin-bottom: 20px;
+  }
+  
+  .Quiz input[type='radio'] {
+    margin-right: 5px;
+  }
+  
