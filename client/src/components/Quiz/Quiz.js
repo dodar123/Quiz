@@ -17,7 +17,7 @@ const Quiz = () => {
     if (selectedOption === quizData[currentQuestion].correctAnswer) {
       alert('Richtige Antwort');
     } else {
-      alert('Falsche Antwort');
+      alert(`Falsche Antwort, die richtige Antwort ist: ${quizData[currentQuestion].correctAnswer}`);
     }
     setShowResult(true);
   };
