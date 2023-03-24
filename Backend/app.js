@@ -43,7 +43,30 @@ app.get('/keys/:key', async (req, res) => {
     res.json({ key, value: parsedValue });
   });
   
-
+  app.delete('/deleteAll', (req, res) => {
+    redis.keys('quizQuestion-*', (err, keys) => {
+      if (err) {
+        console.error('Fehler beim Abrufen der Schlüssel:', err);
+        res.status(500).send({ error: 'Fehler beim Abrufen der Schlüssel' });
+        return;
+      }
+  
+      if (keys.length === 0) {
+        res.status(200).send({ message: 'Keine Schlüssel gefunden' });
+        return;
+      }
+  
+      redis.del(keys, (err, response) => {
+        if (err) {
+          console.error('Fehler beim Löschen der Schlüssel:', err);
+          res.status(500).send({ error: 'Fehler beim Löschen der Schlüssel' });
+        } else {
+          res.status(200).send({ message: `${response} Schlüssel gelöscht` });
+        }
+      });
+    });
+  });
+  
   app.post('/keys', async (req, res) => {
     try {
       const { key, question, options, correctAnswer } = req.body;
@@ -57,45 +80,8 @@ app.get('/keys/:key', async (req, res) => {
     }
   });
   
-  async function seedDatabase() {
-    const quizData = [
-      {
-        key: "quizQuestion1",
-        value: {
-          question: "Welcher Planet ist der größte in unserem Sonnensystem?",
-          options: ["Merkur", "Venus", "Erde", "Mars", "Jupiter", "Saturn", "Uranus", "Neptun"],
-          correctAnswer: "Jupiter",
-        },
-      },
-      {
-        key: "quizQuestion2",
-        value: {
-          question: "Wie viele Kontinente gibt es auf der Erde?",
-          options: ["3", "5", "7", "9"],
-          correctAnswer: "7",
-        },
-      },
-      {
-      key: "quizQuestion3",
-      value: {
-        question: "Was bedeutet das I, der ACID Bedingungen?",
-        options: ["Isoliert", "Ineffizient", "Insuffizient", "Irgendwas"],
-        correctAnswer: "Isoliert",
-      },
-    },
-    ];
-  
-    for (const item of quizData) {
-      const { key, value } = item;
-      const stringValue = JSON.stringify(value);
-      await redis.set(key, stringValue);
-    }
-  
-    console.log("Database seeded with quiz questions");
-  }
-  
   (async () => {
-    await seedDatabase();
+
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
       console.log(`Server listening on port ${port}`);

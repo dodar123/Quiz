@@ -8,7 +8,17 @@ const generateKey = () => {
   const randomValue = Math.random().toString(36).substr(2, 5);
   return `quizQuestion-${timestamp}-${randomValue}`;
 };
-
+const handleDeleteAll = () => {
+  fetch('http://localhost:3000/deleteAll', {
+    method: 'DELETE',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      alert(data.message);
+    })
+    .catch((error) => console.error('Fehler:', error));
+};
 const addQuestion = (questionData) => {
   const key = generateKey();
   fetch('http://localhost:3000/keys', {
@@ -44,10 +54,13 @@ function App() {
           Frage hinzufügen
         </button>
         <button
-          className="btn btn-success"
+          className="btn btn-success mr-3"
           onClick={() => setStartQuiz(true)}
         >
           Quiz starten
+        </button>
+        <button className="btn btn-danger" onClick={handleDeleteAll}>
+          Alle Löschen
         </button>
 
         {showAddQuestionModal && (
