@@ -8,5 +8,30 @@
       "question": "Wo leben Leoparden?",
       "options": ["im Wald", "Im Jungle", "Im Kongo", "Im Wasser"],
       "correctAnswer": "Im Jungle"
+    },
+    {
+      "question": "Welches Land hat die größte Landfläche?",
+      "options": ["China", "USA", "Russland", "Kanada"],
+      "correctAnswer": "Russland"
+    },
+    {
+      "question": "In welchem Jahr wurde die Europäische Union gegründet?",
+      "options": ["1993", "1957", "1986", "2002"],
+      "correctAnswer": "1993"
+    },
+    {
+      "question": "Welches Element hat das chemische Symbol 'H'?",
+      "options": ["Helium", "Sauerstoff", "Wasserstoff", "Natrium"],
+      "correctAnswer": "Wasserstoff"
+    },
+    {
+      "question": "Welches ist der höchste Berg der Welt?",
+      "options": ["K2", "Mount Everest", "Kilimandscharo", "Denali"],
+      "correctAnswer": "Mount Everest"
+    },
+    {
+      "question": "Welcher Planet ist der Sonne am nächsten?",
+      "options": ["Merkur", "Venus", "Mars", "Erde"],
+      "correctAnswer": "Merkur"
     }
   ]

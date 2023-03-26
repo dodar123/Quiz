@@ -8,6 +8,36 @@
       "question": "Wie oft wurde Deutschland weltmeister?",
       "options": ["4 mal", "5 mal", "6 mal", "7 mal"],
       "correctAnswer": "5 mal"
+    },
+    {
+      "question": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
+      "options": ["Brasilien", "Argentinien", "Deutschland", "Frankreich"],
+      "correctAnswer": "Deutschland"
+    },
+    {
+      "question": "Welcher Spieler ist bekannt als 'Der König des Fußballs'?",
+      "options": ["Lionel Messi", "Diego Maradona", "Pelé", "Cristiano Ronaldo"],
+      "correctAnswer": "Pelé"
+    },
+    {
+      "question": "Welcher Club hat die meisten UEFA Champions League-Titel gewonnen?",
+      "options": ["FC Barcelona", "AC Mailand", "FC Bayern München", "Real Madrid"],
+      "correctAnswer": "Real Madrid"
+    },
+    {
+      "question": "In welchem Jahr fand die erste Fußball-Weltmeisterschaft statt?",
+      "options": ["1930", "1950", "1960", "1904"],
+      "correctAnswer": "1930"
+    },
+    {
+      "question": "Wie viele Spieler dürfen bei einem offiziellen Fußballspiel auf dem Feld stehen?",
+      "options": ["9", "10", "11", "12"],
+      "correctAnswer": "11"
+    },
+    {
+      "question": "Welcher Spieler erhielt fünf Mal den FIFA Ballon d'Or?",
+      "options": ["Cristiano Ronaldo", "Lionel Messi", "Zinédine Zidane", "Ronaldinho"],
+      "correctAnswer": "Lionel Messi"
     }
   ]
   

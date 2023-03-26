@@ -1,13 +1,44 @@
 [
-    {
-      "question": "Was ist SQL?",
-      "options": ["Structured Query Language", "Simple Query Language", "Scripting Query Language", "None of the above"],
-      "correctAnswer": "Structured Query Language"
-    },
-    {
-      "question": "Was ist ein Primärschlüssel?",
-      "options": ["Ein eindeutiger Schlüssel", "Ein Fremdschlüssel", "Ein zusammengesetzter Schlüssel", "Ein Kandidatenschlüssel"],
-      "correctAnswer": "Ein eindeutiger Schlüssel"
-    }
-  ]
+     {
+       "question": "Was ist SQL?",
+        "options": ["Structured Query Language", "Simple Query Language", "Scripting Query Language", "None of the above"],
+       "correctAnswer": "Structured Query Language"
+      },
+      {
+       "question": "Was ist ein Primärschlüssel?",
+       "options": ["Ein eindeutiger Schlüssel", "Ein Fremdschlüssel", "Ein zusammengesetzter Schlüssel", "Ein Kandidatenschlüssel"],
+       "correctAnswer": "Ein eindeutiger Schlüssel"
+      },
+      {
+        "question": "Welcher Begriff bezeichnet eine Sammlung von zusammenhängenden Daten?",
+        "options": ["Datenlabyrinth", "Datenbank", "Datenwolke", "Datenkorb"],
+        "correctAnswer": "Datenbank"
+      },
+      {
+        "question": "Welches Tier ist oft mit der Datenbanksprache SQL assoziiert?",
+        "options": ["Elefant", "Faultier", "Delfin", "Pinguin"],
+        "correctAnswer": "Elefant"
+      },
+      {
+        "question": "Welche Datenbank verwendet das CAP-Theorem?",
+        "options": ["NoSQL-Datenbanken", "Flugsicherungssysteme", "Cappuccino-Maschinen", "SQL-Datenbanken"],
+        "correctAnswer": "NoSQL-Datenbanken"
+      },
+      {
+        "question": "Was bedeutet das Akronym 'ACID' im Kontext von Datenbanktransaktionen?",
+        "options": ["Atomicity, Consistency, Isolation, Durability", "Antacid, Curiosity, Imagination, Documentation", "Apple, Carrot, Ice cream, Donut", "Agility, Compatibility, Integrity, Dedication"],
+        "correctAnswer": "Atomicity, Consistency, Isolation, Durability"
+      },
+      {
+        "question": "Welches ist ein bekanntes Open-Source-DBMS (Datenbank-Management-System)?",
+        "options": ["MySQL", "MyKitchen", "MyGarden", "MyGarage"],
+        "correctAnswer": "MySQL"
+      },
+      {
+        "question": "Was ist ein gemeinsames Merkmal von SQL-Injection-Angriffen?",
+        "options": ["Verwendung von Gartenschläuchen", "Einschleusen von bösartigem SQL-Code", "Einführung neuer Modetrends", "Auslösen von Erdbeben"],
+        "correctAnswer": "Einschleusen von bösartigem SQL-Code"
+      }
+    ]
+    
   

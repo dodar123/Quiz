@@ -8,5 +8,35 @@
       "question": "Was ist die Hauptstadt von Italien?",
       "options": ["Rom", "Berlin", "Griechenland", "Gingen"],
       "correctAnswer": "Rom"
+    },
+    {
+      "question": "Welcher ist der größte Kontinent der Erde?",
+      "options": ["Afrika", "Asien", "Europa", "Amerika"],
+      "correctAnswer": "Asien"
+    },
+    {
+      "question": "Welcher Fluss ist der längste Fluss der Welt?",
+      "options": ["Amazonas", "Niger", "Nil", "Jangtsekiang"],
+      "correctAnswer": "Nil"
+    },
+    {
+      "question": "Wie viele Länder gibt es in der Welt?",
+      "options": ["175", "195", "215", "235"],
+      "correctAnswer": "195"
+    },
+    {
+      "question": "Welcher Berg ist der höchste Berg der Welt?",
+      "options": ["K2", "Mount Everest", "Kangchendzönga", "Lhotse"],
+      "correctAnswer": "Mount Everest"
+    },
+    {
+      "question": "Welches Land hat die meisten Einwohner?",
+      "options": ["Indien", "China", "USA", "Indonesien"],
+      "correctAnswer": "China"
+    },
+    {
+      "question": "Welcher Ozean ist der tiefste und größte der Welt?",
+      "options": ["Atlantik", "Arktischer Ozean", "Indischer Ozean", "Pazifischer Ozean"],
+      "correctAnswer": "Pazifischer Ozean"
     }
   ]
