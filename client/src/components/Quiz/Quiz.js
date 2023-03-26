@@ -29,7 +29,7 @@ const Quiz = ({ topic }) => {
   };
 
   if (quizData.length === 0) {
-    return <div>Loading...</div>;
+    return <div>Bitte fügen Sie erst ein paar Fragen hinzu, um mit dem Quickstart Quiz zu starten!</div>;
   }
 
   return (

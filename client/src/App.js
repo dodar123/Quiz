@@ -16,7 +16,7 @@ const generateKey = () => {
   return `quizQuestion-${timestamp}-${randomValue}`;
 };
 const handleDeleteAll = () => {
-  fetch('http://localhost:3000/deleteAll', {
+  fetch('http://localhost:3000/api/deleteAll', {
     method: 'DELETE',
   })
     .then((response) => response.json())
@@ -27,8 +27,8 @@ const handleDeleteAll = () => {
     .catch((error) => console.error('Fehler:', error));
 };
 const addQuestion = (questionData) => {
-  const key = `quizQuestion-generateKey()`;
-  fetch('http://localhost:3000/keys', {
+  const key = `quizQuestion-${generateKey()}`;
+  fetch('http://localhost:3000/api/keys', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
