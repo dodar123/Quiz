@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './Quiz.css';
 
-const Quiz = () => {
+const Quiz = ({ topic }) => {
   const [quizData, setQuizData] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/quiz')
+    fetch(`http://localhost:3000/api/quiz/${topic}`)
       .then((response) => response.json())
       .then((data) => setQuizData(data));
-  }, []);
-
+  }, [topic]);
+  
   const handleSubmit = () => {
     if (selectedOption === quizData[currentQuestion].correctAnswer) {
       alert('Richtige Antwort');

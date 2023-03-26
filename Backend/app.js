@@ -38,6 +38,39 @@ const loadFBQuestions = async () => {
 
   console.log('Datenbankfragen wurden geladen');
 };
+const loadGGQuestions = async () => {
+  const dbQuestionsFile = path.join(__dirname, 'gg_questions.json');
+  const dbQuestions = JSON.parse(fs.readFileSync(dbQuestionsFile, 'utf-8'));
+
+  for (const question of dbQuestions) {
+    const key = `Geographie-${generateKey()}`;
+    await redis.set(key, JSON.stringify(question));
+  }
+
+  console.log('Datenbankfragen wurden geladen');
+};
+
+const loadAGQuestions = async () => {
+  const dbQuestionsFile = path.join(__dirname, 'ag_questions.json');
+  const dbQuestions = JSON.parse(fs.readFileSync(dbQuestionsFile, 'utf-8'));
+
+  for (const question of dbQuestions) {
+    const key = `Allgemein-${generateKey()}`;
+    await redis.set(key, JSON.stringify(question));
+  }
+
+  console.log('Datenbankfragen wurden geladen');
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -127,6 +160,8 @@ app.get('/keys/:key', async (req, res) => {
   (async () => {
     await loadDbQuestions();
     await loadFBQuestions();
+    await loadGGQuestions();
+    await loadAGQuestions();
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
       console.log(`Server listening on port ${port}`);

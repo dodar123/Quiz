@@ -1,0 +1,12 @@
+[
+    {
+      "question": "Wieviele Staaten hat die USA?",
+      "options": ["13", "24", "45", "52"],
+      "correctAnswer": "24"
+    },
+    {
+      "question": "Was ist die Hauptstadt von Italien?",
+      "options": ["Rom", "Berlin", "Griechenland", "Gingen"],
+      "correctAnswer": "Rom"
+    }
+  ]

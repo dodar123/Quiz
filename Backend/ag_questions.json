@@ -1,0 +1,12 @@
+[
+    {
+      "question": "Wieviele Bundesländer hat Deutschland?",
+      "options": ["16", "20", "22", "14"],
+      "correctAnswer": "16"
+    },
+    {
+      "question": "Wo leben Leoparden?",
+      "options": ["im Wald", "Im Jungle", "Im Kongo", "Im Wasser"],
+      "correctAnswer": "Im Jungle"
+    }
+  ]

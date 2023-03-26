@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Quiz/Quiz.css';
 
-const Quiz1 = () => {
+const Quiz1 = ({topic}) => {
   const [quizData, setQuizData] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/quiz')
+    fetch(`http://localhost:3000/api/quiz/${topic}`)
       .then((response) => response.json())
       .then((data) => setQuizData(data));
   }, []);

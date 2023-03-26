@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Quiz from './components/Quiz/Quiz';
-/*import Quiz1 from './components/Quiz1';
-import Quiz2 from './components/Quiz2';
-import Quiz3 from './components/Quiz3';
-import Quiz4 from './components/Quiz4';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-*/
+// import Quiz1 from './components/Quiz1';
+// import Quiz2 from './components/Quiz2';
+// import Quiz3 from './components/Quiz3';
+// import Quiz4 from './components/Quiz4';
+// import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+        
 import AddQuestion from './components/AddQuestion/AddQuestion';
 import './App.css';
 //import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -27,7 +27,7 @@ const handleDeleteAll = () => {
     .catch((error) => console.error('Fehler:', error));
 };
 const addQuestion = (questionData) => {
-  const key = generateKey();
+  const key = `quizQuestion-generateKey()`;
   fetch('http://localhost:3000/keys', {
     method: 'POST',
     headers: {
@@ -43,6 +43,7 @@ const addQuestion = (questionData) => {
 function App() {
   const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
   const [startQuiz, setStartQuiz] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState(null);
 
   const handleAddQuestion = (questionData) => {
     addQuestion(questionData);
@@ -76,7 +77,10 @@ function App() {
         </button>
         <button
           className="btn btn-success mr-3"
-          onClick={() => setStartQuiz(true)}
+          onClick={() => {
+            setStartQuiz(true);
+            setSelectedTopic('quizQuestion');
+             }}
         >
           Quiz starten
         </button>
@@ -84,29 +88,42 @@ function App() {
           Alle Löschen
         </button>
         <button
-          className="btn btn-success mr-3"
-          onClick={() => setStartQuiz(true)}
-        >
-          Datenbanken-Quiz starten
-        </button>
-        <button
-          className="btn btn-success mr-3"
-          onClick={() => setStartQuiz(true)}
-        >
-          Allgemeinwissen-Quiz starten
-        </button>
-        <button
-          className="btn btn-success mr-3"
-          onClick={() => setStartQuiz(true)}
-        >
-          Fußball-Quiz starten
-        </button>
-        <button
-          className="btn btn-success mr-3"
-          onClick={() => setStartQuiz(true)}
-        >
-          Geographie-Quiz starten
-        </button>
+      className="btn btn-success mr-3"
+      onClick={() => {
+       setStartQuiz(true);
+       setSelectedTopic('Datenbank');
+        }}
+      >
+       Datenbanken-Quiz starten
+      </button>
+      <button
+      className="btn btn-success mr-3"
+        onClick={() => {
+       setStartQuiz(true);
+        setSelectedTopic('Allgemein');
+       }}
+      >
+       Allgemeinwissen-Quiz starten
+      </button>
+      <button
+       className="btn btn-success mr-3"
+       onClick={() => {
+         setStartQuiz(true);
+        setSelectedTopic('Fussball');
+       }}
+      >
+       Fußball-Quiz starten
+      </button>
+      <button
+        className="btn btn-success mr-3"
+       onClick={() => {
+         setStartQuiz(true);
+         setSelectedTopic('Geographie');
+       }}
+      >
+       Geographie-Quiz starten
+      </button>
+
         
 
         {showAddQuestionModal && (
@@ -123,7 +140,8 @@ function App() {
           </div>
         )}
 
-        {startQuiz && <Quiz />}
+{startQuiz && <Quiz topic={selectedTopic} />}
+
       </div>
     </div>
   );
