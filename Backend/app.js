@@ -3,12 +3,43 @@ const Redis = require('ioredis');
 const cors = require('cors');
 const app = express();
 app.use(cors());
+const fs = require('fs');
+const path = require('path');
 const redis = new Redis({
   host: 'backend_redis_1', // Name des Docker-Containers, in dem Redis läuft
   port: 6379, // Port, auf dem Redis läuft (Standard-Port)
 });
-
 app.use(express.json());
+const generateKey = () => {
+  const timestamp = new Date().getTime();
+  const randomValue = Math.random().toString(36).substr(2, 5);
+  return `quizQuestion-${timestamp}-${randomValue}`;
+};
+const loadDbQuestions = async () => {
+  const dbQuestionsFile = path.join(__dirname, 'db_questions.json');
+  const dbQuestions = JSON.parse(fs.readFileSync(dbQuestionsFile, 'utf-8'));
+
+  for (const question of dbQuestions) {
+    const key = `Datenbank-${generateKey()}`;
+    await redis.set(key, JSON.stringify(question));
+  }
+
+  console.log('Datenbankfragen wurden geladen');
+};
+
+const loadFBQuestions = async () => {
+  const dbQuestionsFile = path.join(__dirname, 'fb_questions.json');
+  const dbQuestions = JSON.parse(fs.readFileSync(dbQuestionsFile, 'utf-8'));
+
+  for (const question of dbQuestions) {
+    const key = `Fussball-${generateKey()}`;
+    await redis.set(key, JSON.stringify(question));
+  }
+
+  console.log('Datenbankfragen wurden geladen');
+};
+
+
 
 app.get('/api/quiz', async (req, res) => {
     const keys = await redis.keys('quizQuestion*');
@@ -22,8 +53,21 @@ app.get('/api/quiz', async (req, res) => {
   
     res.json(questions);
   });
-  
 
+  app.get('/api/quiz/:topic', async (req, res) => {
+    const topic = req.params.topic;
+    const keys = await redis.keys(`${topic}-quizQuestion-*`);
+    const questions = [];
+  
+    for (const key of keys) {
+      const value = await redis.get(key);
+      const questionData = JSON.parse(value);
+      questions.push(questionData);
+    }
+  
+    res.json(questions);
+  });
+  
 app.get('/keys/:key', async (req, res) => {
     const key = req.params.key;
     const value = await redis.get(key);
@@ -81,7 +125,8 @@ app.get('/keys/:key', async (req, res) => {
   });
   
   (async () => {
-
+    await loadDbQuestions();
+    await loadFBQuestions();
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
       console.log(`Server listening on port ${port}`);

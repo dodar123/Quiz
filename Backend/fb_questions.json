@@ -1,0 +1,13 @@
+[
+    {
+      "question": "Wieviel Spieler gibt es auf einem Feld?",
+      "options": ["11", "14", "18", "22"],
+      "correctAnswer": "22"
+    },
+    {
+      "question": "Wie oft wurde Deutschland weltmeister?",
+      "options": ["4 mal", "5 mal", "6 mal", "7 mal"],
+      "correctAnswer": "5 mal"
+    }
+  ]
+  

@@ -1,0 +1,13 @@
+[
+    {
+      "question": "Was ist SQL?",
+      "options": ["Structured Query Language", "Simple Query Language", "Scripting Query Language", "None of the above"],
+      "correctAnswer": "Structured Query Language"
+    },
+    {
+      "question": "Was ist ein Primärschlüssel?",
+      "options": ["Ein eindeutiger Schlüssel", "Ein Fremdschlüssel", "Ein zusammengesetzter Schlüssel", "Ein Kandidatenschlüssel"],
+      "correctAnswer": "Ein eindeutiger Schlüssel"
+    }
+  ]
+  
