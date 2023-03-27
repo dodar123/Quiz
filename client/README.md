@@ -1,21 +1,21 @@
-# Getting startet mit der Quiz App:
+Quiz app - from zero to hero!
+In dieser Anleitung wird erklärt, wie Sie die Quiz App auf Ihrem System einrichten und starten können. Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllt haben:
 
-1. Git pull: Klone die Version von github mit dem Befehl: Git clone https://github.com/dodar123/Quiz.git
+  -  Git ist auf dem System installiert
+  -  Docker ist installiert und läuft auf dem System
+  -  Docker-Compose ist installiert
 
-2. Nun ist der Code für das Quiz auf Ihrem PC.
+Folgen Sie diesen Schritten, um die Quiz App einzurichten:
 
-3. Öffnen Sie ein Terminal, mitdem du in das Backend des codes Navigierst (cd Backend),
+   1. Repository klonen: Öffnen Sie eine Konsole und navigieren Sie zu dem Verzeichnis, in das Sie das Repository klonen möchten. Führen Sie den Befehl 
+      `git clone https://github.com/dodar123/Quiz.git` aus, um das Repository zu klonen.
 
-4. Installieren Sie nun alle node Packages mit "npm i"
+    2. Backend einrichten: Wechseln Sie in das Backend-Verzeichnis des Projekts mit dem Befehl cd Quiz/Backend. Installieren Sie alle erforderlichen Node.js-Pakete mit dem Befehl npm i.
 
-5. um Redis und den Backend Container zu starten führe: "docker-compose up --build" aus. So werden die Container (Backend und Redis) gebaut.
+    3. Docker-Container starten: Führen Sie den Befehl docker-compose up --build aus, um die Docker-Container für das Backend und Redis zu erstellen und zu starten.
 
-6. Das Backend mit Container läuft nun und alle packages sind installiert.
+    4. Frontend einrichten: Öffnen Sie eine neue Konsole und navigieren Sie in das Frontend-Verzeichnis des Projekts mit dem Befehl cd Quiz/client. Installieren Sie die erforderlichen  Node.js-Pakete mit dem Befehl npm i.
 
-7. Öffnen Sie eine neue Konsole und navigieren Sie in das Frontend(client) : "cd ../client"
+    5. Frontend starten: Starten Sie die Frontend-Anwendung mit dem Befehl npm start. Die Quiz-App wird im Browser geöffnet.
 
-8. Laden Sie wieder die node packages runte mit dem Befehl: "npm i"
-
-9. Starte nun mit dem Befehl "npm start" das Frontend
-
-10. Die Seite wird im Browser aufgerufen und die Quiz Applikation wurde erfolgreich gestartet.
+Herzlichen Glückwunsch! Sie sind nun offiziell ein hero im Quiz App einrichten. Sie haben die Quiz App erfolgreich eingerichtet und gestartet. Viel Spaß beim Quizzen!
