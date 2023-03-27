@@ -2,8 +2,8 @@ Quiz app - from zero to hero!
 In dieser Anleitung wird erklärt, wie Sie die Quiz App auf Ihrem System einrichten und starten können. Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllt haben:
 
   -  Git ist auf dem System installiert
-  -  Docker ist installiert und läuft auf dem System
-  -  Docker-Compose ist installiert
+  -  Docker ist installiert und der Service läuft auf dem System
+  -  docker-compose ist installiert
 
 Folgen Sie diesen Schritten, um die Quiz App einzurichten:
 
