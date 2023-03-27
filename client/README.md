@@ -2,20 +2,20 @@
 
 1. Git pull: Klone die Version von github mit dem Befehl: Git clone https://github.com/dodar123/Quiz.git
 
-2. Nun ich der Code für das Quiz auf deinem PC.
+2. Nun ist der Code für das Quiz auf Ihrem PC.
 
-3. Öffne ein Terminal, mitdem du in das Backend des codes Navigierst (cd Backend),
+3. Öffnen Sie ein Terminal, mitdem du in das Backend des codes Navigierst (cd Backend),
 
-4. Installiere nun alle node Packages mit "npm i"
+4. Installieren Sie nun alle node Packages mit "npm i"
 
-5. um Redis und den Backend Container zu starten führe: "docker-compose up --build" aus, um den aktuellen log zu sehen
+5. um Redis und den Backend Container zu starten führe: "docker-compose up --build" aus. So werden die Container (Backend und Redis) gebaut.
 
-6. Das Backend mit Container läuf nun und alle packages sind installiert.
+6. Das Backend mit Container läuft nun und alle packages sind installiert.
 
-7. Öffne eine neue Konsole und navigiere in das Frontend(client) : "cd ../client"
+7. Öffnen Sie eine neue Konsole und navigieren Sie in das Frontend(client) : "cd ../client"
 
-8. Lade wieder die node packages runte mit dem Befehl: "npm i"
+8. Laden Sie wieder die node packages runte mit dem Befehl: "npm i"
 
-9. Starte nun mit dem Befehl "npm start" das Backend
+9. Starte nun mit dem Befehl "npm start" das Frontend
 
-10. Die Seite wird im Browser aufgerufen und du kannst ein Quiz erstellen und durchführen.
+10. Die Seite wird im Browser aufgerufen und die Quiz Applikation wurde erfolgreich gestartet.
