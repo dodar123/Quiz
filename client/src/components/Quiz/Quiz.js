@@ -23,9 +23,13 @@ const Quiz = ({ topic }) => {
   };
 
   const handleNextQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1);
-    setSelectedOption(null);
-    setShowResult(false);
+    if (currentQuestion < quizData.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedOption(null);
+      setShowResult(false);
+    } else {
+      setShowResult(true);
+    }
   };
 
   if (quizData.length === 0) {
@@ -52,7 +56,13 @@ const Quiz = ({ topic }) => {
           <button onClick={handleSubmit}>Antwort absenden</button>
         </div>
       ) : (
-        <button onClick={handleNextQuestion}>Nächste Frage</button>
+        <div>
+          {currentQuestion === quizData.length - 1 ? (
+            <div>Quiz abgeschlossen!</div>
+          ) : (
+            <button onClick={handleNextQuestion}>Nächste Frage</button>
+          )}
+        </div>
       )}
     </div>
   );
