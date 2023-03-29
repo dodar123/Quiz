@@ -119,7 +119,8 @@ function App() {
               <AddQuestion onAdd={handleAddQuestion} />
               <button
                 className="btn btn-secondary"
-                onClick={() => setShowAddQuestionModal(false)}
+                onClick={() => {setShowAddQuestionModal(false);
+                window.location.reload();}}
               >
                 Schließen
               </button>
