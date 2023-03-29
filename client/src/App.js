@@ -72,7 +72,7 @@ function App() {
         <button className="btn btn-danger" onClick={handleDeleteAll}>
           Erstelltes Quiz löschen
         </button>
-    <div class="ueberschrift"><h2>Hier bearbeiten Sie bereits vorhandene Quizfragen:</h2></div>
+    <div class="ueberschrift"><h2>Hier beantworten Sie bereits vorhandene Quizfragen:</h2></div>
     <div class="fragen-def">
       <button
       className="btn btn-success mr-3"
