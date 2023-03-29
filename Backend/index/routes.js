@@ -5,10 +5,10 @@ const quizController = require("./controllers/quizController");
 const router = require("express").Router();
 
 // Definieren der Routen für die Quiz-API und Zuweisen der Controller-Funktionen zu den Routen
-router.get("/quiz", quizController.getQuiz);  // GET-Route zum Abrufen eines zufälligen Quiz-Fragebogens
+router.get("/quiz", quizController.getQuiz);  // GET-Route zum Abrufen der Fragen vom selbsterstelltem Quiz
 router.get("/quiz/:topic", quizController.getQuizByTopic);  // GET-Route zum Abrufen eines Quiz-Fragebogens zu einem bestimmten Thema
 router.get("/keys/:key", quizController.getKey);  // GET-Route zum Abrufen einer Quizfrage zu einem bestimmten Schlüssel
-router.delete("/deleteAll", quizController.deleteAllKeys);  // DELETE-Route zum Löschen aller Schlüssel in der Redis-Datenbank
+router.delete("/deleteAll", quizController.deleteAllKeys);  // DELETE-Route zum Löschen aller Schlüssel, der selbst hinzugefügten Schlüssel in der Redis-Datenbank
 router.post("/keys", quizController.postKey);  // POST-Route zum Speichern einer neuen Quizfrage in der Redis-Datenbank
 
 // Exportieren des Routers, damit er von anderen Modulen verwendet werden kann

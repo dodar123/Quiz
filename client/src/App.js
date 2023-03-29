@@ -49,16 +49,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Quiz-Anwendung</h1>
+        <h1>Herzlich willkommen zu unserer Quiz-Anwendung!</h1>
       </header>
       
-      <div class="ueberschrift"><h2>Eigenes Quiz erstellen:</h2></div>
+      <div class="ueberschrift"><h2>Hier erstellen Sie Ihr eigenes Quiz:</h2></div>
       <div className="container mt-5">
         <button
           className="btn btn-primary mr-3"
           onClick={() => setShowAddQuestionModal(true)}
         >
-          Frage hinzufügen
+          Fragen hinzufügen
         </button>
         <button
           className="btn btn-success mr-3"
@@ -70,9 +70,9 @@ function App() {
           Quiz starten
         </button>
         <button className="btn btn-danger" onClick={handleDeleteAll}>
-          Alle Löschen
+          Erstelltes Quiz löschen
         </button>
-    <div class="ueberschrift"><h2>Vordefiniertes Quiz starten:</h2></div>
+    <div class="ueberschrift"><h2>Hier bearbeiten Sie bereits vorhandene Quizfragen</h2></div>
     <div class="fragen-def">
       <button
       className="btn btn-success mr-3"

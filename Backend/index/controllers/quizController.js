@@ -1,13 +1,6 @@
 // Importiere das Redis-Modul
 const redis = require("../redis");
 
-// Funktion zum Generieren eines eindeutigen Schlüssels für eine Quizfrage
-const generateKey = () => {
-  const timestamp = new Date().getTime();
-  const randomValue = Math.random().toString(36).substr(2, 5);
-  return `quizQuestion-${timestamp}-${randomValue}`;
-};
-
 // Route zum Abrufen aller Quizfragen
 exports.getQuiz = async (req, res) => {
   // Finde alle Schlüssel, die mit "quizQuestion" beginnen
