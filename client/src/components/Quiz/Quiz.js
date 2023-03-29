@@ -32,6 +32,12 @@ const Quiz = ({ topic }) => {
     }
   };
 
+  
+    const handleClick = () => {
+      window.location.reload();
+    };
+  
+
   if (quizData.length === 0) {
     return <div>Bitte fügen Sie erst ein paar Fragen hinzu, um mit dem Quickstart Quiz zu starten!</div>;
   }
@@ -58,7 +64,7 @@ const Quiz = ({ topic }) => {
       ) : (
         <div>
           {currentQuestion === quizData.length - 1 ? (
-            <div>Quiz abgeschlossen!</div>
+            <><div>Quiz abgeschlossen!</div><button onClick={handleClick}>Neues Quiz starten</button></>
           ) : (
             <button onClick={handleNextQuestion}>Nächste Frage</button>
           )}

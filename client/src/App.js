@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import Quiz from './components/Quiz/Quiz';
-// import Quiz1 from './components/Quiz1';
-// import Quiz2 from './components/Quiz2';
-// import Quiz3 from './components/Quiz3';
-// import Quiz4 from './components/Quiz4';
-// import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
         
 import AddQuestion from './components/AddQuestion/AddQuestion';
 import './App.css';
-//import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
 
 const generateKey = () => {
   const timestamp = new Date().getTime();
@@ -48,27 +44,16 @@ function App() {
   const handleAddQuestion = (questionData) => {
     addQuestion(questionData);
   };
-  //const navigate = useNavigate();
+  
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Quiz-Anwendung</h1>
       </header>
+      
+      <div class="ueberschrift"><h2>Eigenes Quiz erstellen:</h2></div>
       <div className="container mt-5">
-{/*
-      <Router>
-      <Routes>
-
-        <Route path="/quiz1" element={<Quiz1/>} />
-        <Route path="/quiz2" element={<Quiz2/>} />
-        <Route path="/quiz3" element={<Quiz3/>} />
-        <Route path="/quiz4" element={<Quiz4/>} />
-       
-      </Routes>
-      </Router>
-  */}
-
         <button
           className="btn btn-primary mr-3"
           onClick={() => setShowAddQuestionModal(true)}
@@ -87,7 +72,9 @@ function App() {
         <button className="btn btn-danger" onClick={handleDeleteAll}>
           Alle Löschen
         </button>
-        <button
+    <div class="ueberschrift"><h2>Vordefiniertes Quiz starten:</h2></div>
+    <div class="fragen-def">
+      <button
       className="btn btn-success mr-3"
       onClick={() => {
        setStartQuiz(true);
@@ -123,7 +110,7 @@ function App() {
       >
        Geographie-Quiz starten
       </button>
-
+    </div>
         
 
         {showAddQuestionModal && (
